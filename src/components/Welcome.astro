@@ -1,218 +1,774 @@
+
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import Layout from '../layouts/Layout.astro';
+
+const activities = [
+  {
+    number: '01',
+    icon: '⌘',
+    title: 'Developer Tools',
+    description: 'Creating frameworks, libraries and practical utilities that help developers build better software.',
+    tags: ['Frameworks', 'Libraries', 'Utilities']
+  },
+  {
+    number: '02',
+    icon: '⌥',
+    title: 'Open Source',
+    description: 'Contributing to open-source projects, sharing ideas and collaborating with the wider developer community.',
+    tags: ['GitHub', 'Collaboration', 'Community']
+  },
+  {
+    number: '03',
+    icon: '⌕',
+    title: 'Website Testing',
+    description: 'Exploring websites, identifying usability and functionality issues, and sharing meaningful feedback.',
+    tags: ['Testing', 'Usability', 'Feedback']
+  },
+  {
+    number: '04',
+    icon: '✎',
+    title: 'Technical Writing',
+    description: 'Writing blogs, tutorials and technical insights that make development knowledge more accessible.',
+    tags: ['Blogs', 'Tutorials', 'Learning']
+  }
+];
+
+const projects = [
+  {
+    number: '01',
+    name: 'YourUIKit',
+    category: 'REACT COMPONENT LIBRARY',
+    description: 'A lightweight React UI kit for indie developers. Build interfaces faster with reusable and customizable components.',
+    technologies: ['React', 'TypeScript', 'UI Components'],
+    link: 'https://github.com/Vyoma-labs/youruikit',
+    label: 'View Repository'
+  },
+  {
+    number: '02',
+    name: 'VyomaCSS',
+    category: 'SCSS-BASED CSS FRAMEWORK',
+    description: 'A lightweight styling framework focused on clean architecture, reusable utilities and simple customization.',
+    technologies: ['SCSS', 'CSS', 'Utilities'],
+    link: 'https://github.com/psjdeveloper/vyomacss',
+    label: 'View Repository'
+  }
+];
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build">
-				<img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" />
-			</a>
-			<h1>
-				To get started, open the{' '}
-				<code>
-					<pre>src/pages</pre>
-				</code>{' '}
-				directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">
-					Read our docs
-				</a>
-				<a href="https://astro.build/chat">
-					Join our Discord{' '}
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36">
-						<path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path>
-					</svg>
-				</a>
-			</section>
-		</section>
-	</main>
+<Layout>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow"></div>
 
-	<a href="https://astro.build/blog/astro-7/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"
-			></path>
-		</svg>
-		<h2>What's New in Astro 7.0?</h2>
-		<p>
-			Rust-powered compiler, advanced routing, AI agent support, and more! Click to explore Astro
-			7.0's new features.
-		</p>
-	</a>
-</div>
+      <span class="hero-label">
+        <span class="status-dot"></span>
+        INDEPENDENT DEVELOPER-FOCUSED LAB
+      </span>
+
+      <h1>Vyoma<span>Labs.</span></h1>
+
+      <div class="hero-tagline">
+        Contribute <span>·</span> Develop <span>·</span> Test
+      </div>
+
+      <p>
+        We build developer tools, support open-source software,
+        test digital experiences and share knowledge through writing.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="primary-btn">
+          Explore Our Tools <span>↗</span>
+        </a>
+        <a href="#about" class="secondary-btn">
+          About VyomaLabs
+        </a>
+      </div>
+
+      <div class="hero-scroll">
+        <span></span>
+        SCROLL TO EXPLORE
+      </div>
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="section" id="what-we-do">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">01 / WHAT WE DO</span>
+          <h2>Ideas into tools.<br />Knowledge into impact<span>.</span></h2>
+        </div>
+
+        <p>
+          Our work focuses on creating useful resources for developers
+          and contributing to a more accessible software ecosystem.
+        </p>
+      </div>
+
+      <div class="activity-grid">
+        {activities.map((activity) => (
+          <article class="activity-card">
+            <div class="card-top">
+              <span class="activity-icon">{activity.icon}</span>
+              <span class="number">{activity.number}</span>
+            </div>
+
+            <h3>{activity.title}</h3>
+            <p>{activity.description}</p>
+
+            <div class="tags">
+              {activity.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">02 / SELECTED PROJECTS</span>
+          <h2>Tools made to<br />help developers<span>.</span></h2>
+        </div>
+
+        <p>
+          A growing collection of developer-focused tools,
+          libraries and resources built under VyomaLabs.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        {projects.map((project) => (
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-number">{project.number}</span>
+              <span class="project-mark">↗</span>
+            </div>
+
+            <span class="project-category">{project.category}</span>
+            <h3>{project.name}<span>.</span></h3>
+            <p>{project.description}</p>
+
+            <div class="tags">
+              {project.technologies.map((technology) => (
+                <span>{technology}</span>
+              ))}
+            </div>
+
+            <a
+              href={project.link}
+              class="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Explore ${project.name} on GitHub`}
+            >
+              {project.label} <span>↗</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="projects-note">
+        <span class="note-line"></span>
+        <p>More experiments, tools and open-source work are on the way.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <span class="eyebrow">03 / ABOUT VYOMALABS</span>
+
+      <div class="about-grid">
+        <div>
+          <h2>Built around<br />the developer<br />mindset<span>.</span></h2>
+        </div>
+
+        <div class="about-content">
+          <p>
+            VyomaLabs is an independent, developer-focused technology
+            initiative founded by <strong>Prasoon Jadon</strong>.
+            It brings together the practice of building software,
+            exploring ideas and contributing to the developer ecosystem.
+          </p>
+
+          <p>
+            From frameworks and libraries to open-source collaboration,
+            website testing and technical writing, VyomaLabs focuses
+            on learning through building and sharing.
+          </p>
+
+          <div class="founder">
+            <div class="founder-avatar">PJ</div>
+            <div>
+              <span>FOUNDER</span>
+              <h3>Prasoon Jadon</h3>
+              <p>Developer · Open-source enthusiast</p>
+            </div>
+          </div>
+
+          <div class="philosophy">
+            <span>OUR PHILOSOPHY</span>
+            <h3>Contribute. Develop. Test.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing">
+      <span class="eyebrow">BUILDING IN THE OPEN</span>
+      <h2>Good software grows<br />through <span>collaboration.</span></h2>
+      <p>
+        Explore our work, discover our tools or connect with us
+        through the open-source community.
+      </p>
+      <a
+        href="https://github.com/Vyoma-labs"
+        class="primary-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Find Us on GitHub <span>↗</span>
+      </a>
+    </section>
+  </main>
+</Layout>
 
 <style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+  :global(*) {
+    box-sizing: border-box;
+  }
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+  :global(html) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+  :global(body) {
+    margin: 0;
+    background: #080b12;
+    color: #f5f7ff;
+    font-family: Inter, Arial, sans-serif;
+  }
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+  :global(a) {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+  main {
+    overflow: hidden;
+  }
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+  .hero {
+    min-height: 88vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 24px 80px;
+    isolation: isolate;
+  }
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+  .hero-glow {
+    position: absolute;
+    width: 650px;
+    height: 450px;
+    max-width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse, #6574ee24, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+  }
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+  .hero-label,
+  .eyebrow {
+    color: #8994ff;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+  }
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+  .hero-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #28334b;
+    border-radius: 30px;
+    padding: 10px 16px;
+    background: #111827;
+  }
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8994ff;
+    box-shadow: 0 0 12px #8994ff;
+  }
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+  .hero h1 {
+    font-size: clamp(3.5rem, 11vw, 7.5rem);
+    letter-spacing: -6px;
+    margin: 28px 0 12px;
+    font-weight: 850;
+    line-height: 1;
+  }
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+  .hero h1 span,
+  .section-header h2 span,
+  .about h2 span,
+  .project-card h3 span,
+  .closing h2 span {
+    color: #8994ff;
+  }
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+  .hero-tagline {
+    font-size: clamp(.8rem, 3vw, 1.15rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #c4cbe0;
+  }
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
+  .hero-tagline span {
+    color: #8994ff;
+    margin: 0 5px;
+  }
 
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
+  .hero > p {
+    max-width: 560px;
+    color: #929db3;
+    line-height: 1.9;
+    margin: 25px auto;
+    font-size: 1rem;
+  }
 
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
 
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
+  .primary-btn,
+  .secondary-btn {
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 650;
+    transition: .25s ease;
+  }
 
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
+  .primary-btn {
+    background: #6574ee;
+    color: white;
+  }
 
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
+  .primary-btn:hover {
+    background: #8290ff;
+    transform: translateY(-3px);
+  }
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
+  .secondary-btn {
+    color: #d2d8e8;
+    border: 1px solid #28334b;
+    background: #111827;
+  }
 
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
+  .secondary-btn:hover {
+    border-color: #8994ff;
+    color: white;
+  }
 
-		#links {
-			flex-wrap: wrap;
-		}
+  .hero-scroll {
+    position: absolute;
+    bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #68738b;
+    font-size: .62rem;
+    letter-spacing: 2px;
+  }
 
-		#links a.button {
-			padding: 14px 18px;
-		}
+  .hero-scroll span {
+    height: 1px;
+    width: 30px;
+    background: #6574ee;
+  }
 
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
+  .section {
+    max-width: 1180px;
+    margin: 105px auto;
+    padding: 30px 25px;
+  }
 
-		h1 {
-			line-height: 1.5;
-		}
-	}
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 45px;
+  }
+
+  .section-header h2,
+  .about h2,
+  .closing h2 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    margin: 20px 0 0;
+  }
+
+  .section-header > p {
+    color: #929db3;
+    line-height: 1.9;
+    max-width: 390px;
+    font-size: .94rem;
+    margin-bottom: 5px;
+  }
+
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .activity-card,
+  .project-card {
+    position: relative;
+    padding: 30px;
+    border: 1px solid #20283a;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #111a2b, #0d1220);
+    transition: .3s ease;
+  }
+
+  .activity-card:hover,
+  .project-card:hover {
+    transform: translateY(-5px);
+    border-color: #6574ee;
+  }
+
+  .card-top,
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .activity-icon {
+    color: #a1aaff;
+    background: #202a45;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 1.5rem;
+  }
+
+  .number,
+  .project-number {
+    color: #65718b;
+    font-family: monospace;
+    font-size: .85rem;
+  }
+
+  .activity-card h3 {
+    margin: 27px 0 10px;
+    font-size: 1.35rem;
+  }
+
+  .activity-card p,
+  .project-card > p,
+  .about-content > p {
+    color: #929db3;
+    font-size: .94rem;
+    line-height: 1.85;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+  }
+
+  .tags span {
+    color: #aab6cc;
+    border: 1px solid #28334b;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: .7rem;
+  }
+
+  /* PROJECTS */
+
+  .projects {
+    border-top: 1px solid #20283a;
+    padding-top: 75px;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+  }
+
+  .project-top {
+    margin-bottom: 35px;
+  }
+
+  .project-mark {
+    color: #8994ff;
+    font-size: 1.3rem;
+  }
+
+  .project-category {
+    color: #8994ff;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .project-card h3 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin: 12px 0 5px;
+  }
+
+  .project-card > p {
+    margin: 8px 0;
+    max-width: 470px;
+  }
+
+  .project-card .tags {
+    margin-bottom: 28px;
+  }
+
+  .project-link {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #28334b;
+    display: flex;
+    justify-content: space-between;
+    color: #c4cbe0;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 650;
+    transition: .2s;
+  }
+
+  .project-link:hover {
+    color: #8994ff;
+  }
+
+  .projects-note {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .note-line {
+    width: 35px;
+    height: 1px;
+    background: #6574ee;
+  }
+
+  .projects-note p {
+    color: #78849d;
+    font-size: .82rem;
+  }
+
+  /* ABOUT */
+
+  .about {
+    border-top: 1px solid #20283a;
+    border-bottom: 1px solid #20283a;
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    margin-top: 25px;
+  }
+
+  .about-content > p strong {
+    color: #e6eaff;
+  }
+
+  .founder {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 35px;
+    padding: 20px 0;
+    border-top: 1px solid #20283a;
+    border-bottom: 1px solid #20283a;
+  }
+
+  .founder-avatar {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #202a45;
+    color: #a1aaff;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+
+  .founder span,
+  .philosophy span {
+    color: #8994ff;
+    font-size: .65rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+
+  .founder h3 {
+    margin: 5px 0;
+    font-size: 1.05rem;
+  }
+
+  .founder p {
+    margin: 0;
+    color: #929db3;
+    font-size: .8rem;
+  }
+
+  .philosophy {
+    margin-top: 28px;
+    padding: 22px;
+    border-left: 2px solid #8994ff;
+    background: #111a2b;
+  }
+
+  .philosophy h3 {
+    margin: 10px 0 0;
+    font-size: 1.3rem;
+  }
+
+  /* CLOSING */
+
+  .closing {
+    text-align: center;
+    padding: 100px 24px 120px;
+    background: radial-gradient(ellipse at 50% 100%, #6574ee18, transparent 65%);
+  }
+
+  .closing h2 {
+    margin: 22px 0;
+  }
+
+  .closing > p {
+    color: #929db3;
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+
+  @media (max-width: 760px) {
+    .hero {
+      min-height: 80vh;
+    }
+
+    .hero h1 {
+      letter-spacing: -3px;
+    }
+
+    .section {
+      margin: 65px auto;
+    }
+
+    .section-header {
+      display: block;
+    }
+
+    .section-header > p {
+      margin-top: 20px;
+    }
+
+    .activity-grid,
+    .project-grid,
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .about-grid {
+      gap: 25px;
+    }
+
+    .project-card {
+      min-height: 330px;
+    }
+
+    .closing {
+      padding: 75px 24px 90px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .hero-label {
+      font-size: .58rem;
+      letter-spacing: 1.5px;
+    }
+
+    .hero-tagline {
+      letter-spacing: 1.5px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero-actions a {
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .activity-card,
+    .project-card {
+      padding: 23px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: .01ms !important;
+    }
+  }
 </style>
